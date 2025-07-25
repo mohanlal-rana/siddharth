@@ -13,7 +13,7 @@ const path=require('path')
 const app = express();
 
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "https://siddharth-frontend.netlify.app",
   methods: "GET,POST,PUT,DELETE,PATCH,HEAD",
   credentials: true,
 };
