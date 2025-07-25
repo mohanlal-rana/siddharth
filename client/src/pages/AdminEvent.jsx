@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { FaPlus, FaTrash } from "react-icons/fa";
 import { useAuth } from "../store/auth";
 import { FaTowerBroadcast } from "react-icons/fa6";
-import { useAuth } from "../store/auth";
 
 export default function AdminEvent() {
   // const [events, setEvents] = useState([]);
