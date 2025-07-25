@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useAuth } from "../store/auth";
 
 export default function Notice() {
-  const { notices } = useAuth();
+  const { notices,API } = useAuth();
   const [selectedNotice, setSelectedNotice] = useState(null);
   console.log(notices[0].image);
   const handleDownload = async (url, filename) => {

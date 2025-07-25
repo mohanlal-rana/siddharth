@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 import { useAuth } from "../store/auth";
 
 export default function News() {
-  const { events } = useAuth();
+  const { events,API } = useAuth();
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
