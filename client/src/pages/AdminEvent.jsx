@@ -170,7 +170,7 @@ export default function AdminEvent() {
           >
             {console.log(event.image)}
             <img
-              src={`http://localhost:3000${event.image}`}
+              src={`${API}${event.image}`}
               alt={event.title}
               className="h-52 w-full object-cover transition-transform hover:scale-105 duration-200"
             />

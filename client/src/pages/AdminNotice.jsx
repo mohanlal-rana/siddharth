@@ -151,7 +151,7 @@ export default function AdminNotice() {
                 <tr key={notice._id} className="hover:bg-gray-50">
                   <td className="p-3 border">
                     <img
-                      src={`http://localhost:3000${notice.image}`}
+                      src={`${API}${notice.image}`}
                       alt={notice.title}
                       className="h-16 w-28 object-cover rounded cursor-pointer"
                       onClick={() => setSelectedNotice(notice)}
@@ -186,7 +186,7 @@ export default function AdminNotice() {
                 {/* Scrollable image container */}
                 <div className=" overflow-auto h-[70vh] mb-4">
                   <img
-                    src={`http://localhost:3000${selectedNotice.image}`}
+                    src={`${API}${selectedNotice.image}`}
                     alt={selectedNotice.title}
                     className="w-full object-contain  "
                   />

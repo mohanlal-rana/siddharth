@@ -43,7 +43,7 @@ export default function Notice() {
             className="bg-white shadow-md rounded-xl overflow-hidden hover:shadow-lg transition pb-5"
           >
             <img
-              src={`http://localhost:3000${notice.image}`}
+              src={`${API}${notice.image}`}
               alt={notice.title}
               className="w-full h-48 object-cover object-top"
             />
@@ -70,7 +70,7 @@ export default function Notice() {
               <button
                 onClick={() =>
                   handleDownload(
-                    `http://localhost:3000${notice.image}`,
+                    `${API}${notice.image}`,
                     `${notice.title}`
                   )
                 }
@@ -97,7 +97,7 @@ export default function Notice() {
                 {/* Scrollable image container */}
                 <div className=" overflow-auto h-[70vh] mb-4">
                   <img
-                    src={`http://localhost:3000${selectedNotice.image}`}
+                    src={`${API}${selectedNotice.image}`}
                     alt={selectedNotice.title}
                     className="w-full object-contain  "
                   />

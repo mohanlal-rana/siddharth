@@ -33,7 +33,7 @@ export default function News() {
             >
               <div className="md:w-1/2 w-full h-64 overflow-hidden">
                 <img
-                  src={`http://localhost:3000${item.image}`}
+                  src={`${API}${item.image}`}
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 />
