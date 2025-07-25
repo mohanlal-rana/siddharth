@@ -1,0 +1,32 @@
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# node_modules (for both client and server)
+client/node_modules/
+server/node_modules/
+
+# build output
+client/dist/
+server/dist/
+
+# env files
+.env
+.env.local
+client/.env
+server/.env
+
+# Optional lock files
+yarn.lock
+pnpm-lock.yaml
