@@ -36,7 +36,7 @@ export default function AdminNotice() {
       formData.append("date", newNotice.date);
       formData.append("image", newNotice.image);
 
-      const res = await fetch(`${API}api/admin/notice`, {
+      const res = await fetch(`${API}/api/admin/notice`, {
         method: "POST",
         headers: {
           Authorization: authorizationToken,
@@ -61,7 +61,7 @@ export default function AdminNotice() {
   const handleDelete = async (id) => {
     try {
       const res = await fetch(
-        `${API}api/admin/notice/delete/${id}`,
+        `${API}/api/admin/notice/delete/${id}`,
         {
           method: "DELETE",
           headers: {

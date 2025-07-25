@@ -30,7 +30,7 @@ export default function AdminEvent() {
         return 
       }
 
-      const res = await fetch(`${API}api/event`, {
+      const res = await fetch(`${API}/api/event`, {
         method: "POST",
         headers: {
           Authorization: authorizationToken,
@@ -75,7 +75,7 @@ export default function AdminEvent() {
     );
     if (!confirmDelete) return;
     try {
-      await fetch(`${API}api/event/${id}`, {
+      await fetch(`${API}/api/event/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: authorizationToken,

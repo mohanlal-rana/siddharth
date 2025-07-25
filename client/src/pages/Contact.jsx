@@ -30,7 +30,7 @@ export default function Contact() {
     console.log(formData)
 
     try {
-      const response = await fetch(`${API}api/form/contact`, {
+      const response = await fetch(`${API}/api/form/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

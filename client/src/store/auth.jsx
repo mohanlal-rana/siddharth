@@ -11,9 +11,9 @@ export const AuthProvider = ({ children }) => {
   const [isLoadding, setIsLoadding] = useState(true);
   const [notices, setNotices] = useState([]);
   const [events, setEvents] = useState([]);
-  
-const API=mport.meta.env.VITE_API || "http://localhost:3000";
-console.log(API)
+
+  const API = import.meta.env.VITE_API;
+
   const storeTokenInLS = (serverToken) => {
     localStorage.setItem("token", serverToken);
     setToken(serverToken);
@@ -27,7 +27,7 @@ console.log(API)
   const userAuthentication = async () => {
     try {
       setIsLoadding(true);
-      const response = await fetch(`${API}api/auth/user`, {
+      const response = await fetch(`${API}/api/auth/user`, {
         method: "GET",
         headers: {
           Authorization: authorizationToken,
@@ -44,7 +44,7 @@ console.log(API)
   };
   const fetchNotices = async function () {
     try {
-      const res = await fetch(`${API}api/notice`, {
+      const res = await fetch(`${API}/api/notice`, {
         method: "GET",
       });
       const data = await res.json();
@@ -61,29 +61,27 @@ console.log(API)
   };
   const fetchEvents = async () => {
     try {
-      const response = await fetch(`${API}api/event`, {
+      const response = await fetch(`${API}/api/event`, {
         method: "GET",
       });
       const res_data = await response.json();
       if (response.ok) {
         setEvents(res_data);
       }
-      console.log(res_data)
     } catch (error) {
       console.error(error);
     }
   };
-  const refreshEvents=()=>{
-    fetchEvents()
-  }
+  const refreshEvents = () => {
+    fetchEvents();
+  };
   const refreshNotices = () => {
-    
     fetchNotices();
   };
   useEffect(() => {
     userAuthentication();
     fetchNotices();
-    fetchEvents()
+    fetchEvents();
   }, [token]);
   return (
     <AuthContext.Provider
@@ -98,7 +96,7 @@ console.log(API)
         events,
         refreshNotices,
         refreshEvents,
-        API
+        API,
       }}
     >
       {" "}

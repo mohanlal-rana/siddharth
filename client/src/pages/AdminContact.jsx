@@ -9,7 +9,7 @@ export default function AdminContact() {
     const fetchContacts = async () => {
       try {
         const response = await fetch(
-          `${API}api/admin/contact`,
+          `${API}/api/admin/contact`,
           {
             method: "GET",
             headers: {
@@ -33,7 +33,7 @@ export default function AdminContact() {
 
   const handleDelete = async (id) => {
      try {
-      const response=await fetch(`${API}api/admin/contact/delete/${id}`,{
+      const response=await fetch(`${API}/api/admin/contact/delete/${id}`,{
         method:"DELETE",
         headers:{
           Authorization:authorizationToken
