@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
   const [notices, setNotices] = useState([]);
   const [events, setEvents] = useState([]);
   
-const API=import.meta.env.VITE_API;
+const API=`${import.meta.env.VITE_API}/api/auth/login`
 console.log(API)
   const storeTokenInLS = (serverToken) => {
     localStorage.setItem("token", serverToken);
