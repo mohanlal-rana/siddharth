@@ -18,6 +18,7 @@ import AdminProfile from "./pages/AdminProfile";
 import AdminEvent from "./pages/AdminEvent";
 import AdminNotice from "./pages/AdminNotice";
 import SplashScreen from "./components/SplashScreen";
+import ScrollToTop from "./components/ScrollTop";
 // import SplashScreen from "./components/SplashScreen";
 
 function AppWrapper() {
@@ -26,7 +27,7 @@ function AppWrapper() {
 
   return (
     <>
-     { !hideFooterAndApplication&& <Navbar />}
+      {!hideFooterAndApplication && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/academics" element={<Academics />} />
@@ -51,7 +52,7 @@ function AppWrapper() {
 }
 
 export default function App() {
-    const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -65,7 +66,9 @@ export default function App() {
   }
   return (
     <BrowserRouter>
-      <AppWrapper />
+      <ScrollToTop>
+        <AppWrapper />
+      </ScrollToTop>
     </BrowserRouter>
   );
 }
