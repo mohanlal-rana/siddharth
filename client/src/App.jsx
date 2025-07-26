@@ -66,9 +66,9 @@ export default function App() {
   }
   return (
     <BrowserRouter>
-      <ScrollToTop>
+      <ScrollToTop/>
         <AppWrapper />
-      </ScrollToTop>
+      
     </BrowserRouter>
   );
 }
