@@ -31,7 +31,7 @@ export default function Login() {
       });
       const res_data = await response.json();
 
-      if (response.ok) {
+      if (response.status === 200 && res_data.token) {
         storeTokenInLS(res_data.token);
         toast.success("logi successfull");
         navigate("/");
