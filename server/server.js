@@ -30,6 +30,14 @@ app.use("/api/notice",noticeRouter)
 app.use("/api/event",eventRouter)
 app.use("/uploads/notices", express.static(path.join(process.cwd(), "uploads/notices")));
 app.use("/uploads/events",express.static(path.join(process.cwd(),"uploads/events")))
+// Serve static files
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+// Catch-all for React routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
 
 app.use(errorMiddleware);
 const PORT = 3000;
