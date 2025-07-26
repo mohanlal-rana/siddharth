@@ -32,7 +32,7 @@ exports.login = async (req, res, next) => {
     const userExist = await User.findOne({ email });
 
     if (!userExist) {
-      return res.status(200).json({ message: "Invalid email or password" });
+      return res.status(401).json({ message: "Invalid email or password" });
     }
     const isMaatch = await userExist.comparePassword(password);
 
