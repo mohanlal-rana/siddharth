@@ -34,13 +34,13 @@ exports.login = async (req, res, next) => {
     if (!userExist) {
       return res.status(200).json({ message: "Invalid email or password" });
     }
-    const user = await userExist.comparePassword(password);
+    const isMaatch = await userExist.comparePassword(password);
 
-    if (user) {
+    if (isMaatch) {
       res.status(200).json({
         message: "login successfull",
         token: await userExist.generateToken(),
-        userId: userExist.toString(),
+        userId: userExist._id.toString(),
       });
     } else {
       res.status(401).json({ message: "invalid email or password" });
